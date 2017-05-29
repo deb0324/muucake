@@ -1,0 +1,13 @@
+<%= render 'shared/title', title: '所有商品' %>
+
+<%= link_to '新增產品', new_product_path %>
+<div>
+  <% @products.each do |product| %>
+    <p>
+      <%= product.name_chin %>
+      <%= link_to '修改', edit_product_path(product) %>
+      <%= link_to '檢視', product_path(product) %>
+      <%= link_to '刪除', product_path(product), method: 'delete', :data => {:confirm => '確定？'} %>
+    </p>
+  <% end %>
+</div>

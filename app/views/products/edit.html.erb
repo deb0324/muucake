@@ -1,0 +1,16 @@
+<%= render 'shared/title', title: @product.name_chin %>
+
+<div>
+  <%= form_for @product do |f| %>
+    <label>產品中文名</label>
+    <p><%= f.text_field :name_chin %></p>
+
+    <label>產品英文名</label>
+    <p><%= f.text_field :name_eng %></p>
+
+    <label>產品價格</label>
+    <p><%= f.text_field :price %></p>
+
+    <%= f.submit '修改' %>
+  <% end %>
+</div>
