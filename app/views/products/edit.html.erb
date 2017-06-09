@@ -8,6 +8,9 @@
     <label>產品英文名</label>
     <p><%= f.text_field :name_eng %></p>
 
+    <label>尺寸:</label>
+    <p><%= f.select :size, options_for_select(@size) %></p>
+
     <label>產品價格</label>
     <p><%= f.text_field :price %></p>
 

@@ -1,0 +1,37 @@
+<%= render "shared/title", title: "新增訂單" %>
+
+<div>
+  <%= form_for @order do |f| %>
+    <label>收件人</label>
+    <p><%= f.text_field :receiver %></p>
+
+    <label>電話</label>
+    <p><%= f.text_field :phone %></p>
+
+    <label>付款</label>
+    <p><%= f.text_field :paid %></p>
+
+    <label>交貨</label>
+    <p><%= f.text_field :method %></p>
+
+    <label>日期</label>
+    <p><%= f.date_select :pickup_date %></p>
+
+    <label>時間</label>
+    <p><%= f.time_select :pickup_time %></p>
+
+    <label>地址</label>
+    <p><%= f.text_field :address %></p>
+
+    <label>運費</label>
+    <p><%= f.text_field :fee %></p>
+
+    <label>lala運費</label>
+    <p><%= f.text_field :lala_fee %></p>
+
+    <label>備註</label>
+    <p><%= f.text_area :note %></p>
+
+    <%= f.submit '新增'%>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<%= render 'shared/title', title: "訂單" %>
+
+<div>
+  <p>收件人: <%= @order.receiver %></p>
+  <p>電話: <%= @order.phone %></p>
+  <p>付款: <%= @order.paid %></p>
+  <p>交貨: <%= @order.method %></p>
+  <p>日期: <%= @order.pickup_date %></p>
+  <p>時間: <%= @order.pickup_time %></p>
+  <p>地址: <%= @order.address %></p>
+  <p>總價: <%= @order.total_price %></p>
+  <p>運費: <%= @order.fee %></p>
+  <p>lala運費: <%= @order.lala_fee %></p>
+
+  <% @order.items.each do |item| %>
+    <p>==============================</p>
+    <p>產品: <%= item.product%> <%= item.size%></p>
+    <p>數量: <%= item.quantity %></p>
+    <p>價錢: <%= item.price %></p>
+    <p><%= link_to '修改', edit_item_path(item) %></p>
+  <% end %>
+  <p>==============================</p>
+  <p>備註: <%= @order.note %></p>
+  <p><%= link_to '修改', edit_order_path(@order) %></p>
+
+</div>

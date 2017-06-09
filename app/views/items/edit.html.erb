@@ -1,0 +1,21 @@
+<%= render 'shared/title', title: "修改訂單" %>
+
+<div>
+  <%= form_for @item do |f| %>
+    <label>產品:</label>
+    <p><%= f.select :product, options_for_select(@product_list, @product_select) %></p>
+
+    <label>產品尺寸:</label>
+    <p><%= f.select :size, options_for_select(@size, @original_size) %></p>
+
+    <label>產品價格</label>
+    <p><%= f.text_field :price %></p>
+
+    <label>產品數量</label>
+    <p><%= f.text_field :quantity %></p>
+
+    <%= f.hidden_field :order_id, value: @order_id%>
+
+    <%= f.submit "修改"%>
+  <% end %>
+</div>

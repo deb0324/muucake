@@ -4,7 +4,7 @@
 <div>
   <% @products.each do |product| %>
     <p>
-      <%= product.name_chin %>
+      <%= product.name_chin %> - <%= product.size %>
       <%= link_to '修改', edit_product_path(product) %>
       <%= link_to '檢視', product_path(product) %>
       <%= link_to '刪除', product_path(product), method: 'delete', :data => {:confirm => '確定？'} %>

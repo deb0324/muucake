@@ -1,3 +1,10 @@
 <h1>MuuCake</h1>
 
 <p><%= link_to '檢視產品', products_path %></p>
+<p><%= link_to '新增訂單', new_order_path %></p>
+
+<div>
+  <% @orders.each do |order| %>
+    <p><%= link_to "order id:#{order.id}", order_path(order)%></p>
+  <% end %>
+</div>
